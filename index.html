@@ -1,37 +1,1176 @@
 <!DOCTYPE html>
+<!-- saved from url=(0090)https://makalam.com/ilkinji-telegramma-botunyzy-python-bilen-yasamak-adimme-adim-goll-583/ -->
 <html lang="tk" class="fontawesome-i2svg-active fontawesome-i2svg-complete"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script src="./m2_files/f.txt"></script><script src="./m2_files/f(1).txt" id="google_shimpl"></script><script type="text/javascript">
+            localStorage.lightLogo = "/cdn/static/img/logos/makalam/shortened_logo_dark.bbfa2061d0fd.svg";
+            localStorage.darkLogo = "/cdn/static/img/logos/makalam/shortened_logo_light.58a7da38ba33.svg";
+            // On page load or when changing themes, best to add inline in `head` to avoid FOUC
+            if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+              document.documentElement.classList.add('dark');
+            } else {
+              document.documentElement.classList.remove('dark');
+            }
+        </script>
+
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Biraz başgaça agzamyz Türkmenistana gidip gelipdir-de özüni erbet duýupdyr. Birbada onuň sebäbine-de düşünip bilmändir. Özüni garaňkyda sermeläp ýören ýaly duýupdyr. Bulary okap “Be gyzymyza nä döw çaldyka?” diýip ýazgynyň yzyny okamaga howlukdym. Eger do…">
+<meta name="description" content="Telegram botlary durmuşyňyzy aňsatlaşdyrmak üçin güýçli gurallardyr. Bu makala, doly awtomatlaşdyrylan Telegram botyny döretmek üçin aňsat ädimler bilen tanyşdyrýar.1. Telegramda täze bot dörediňBot ýasamak üçin ilkinji ädim Telegramyň öz BotFather-den ba…">
 <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#020617" media="(prefers-color-scheme: dark)">
 <meta property="og:locale" content="tk_TM">
-<meta property="og:title" content="Biraz Başgaça&#39; - biraz başgaça | Ylýas Amangeldiýew">
-<meta property="og:description" content="Biraz başgaça agzamyz Türkmenistana gidip gelipdir-de özüni erbet duýupdyr. Birbada onuň sebäbine-de düşünip bilmändir. Özüni garaňkyda sermeläp ýören ýaly duýupdyr. Bulary okap “Be gyzymyza nä döw ç…">
-<meta property="og:url" content="https://makalam.com/biraz-basgaca-biraz-basgaca-587/">
-<meta property="og:image" content="https://makalam.com/cdn/media/images/279e34a7-514c-4748-8918-b21a188bd6c0.webp">
+<meta property="og:title" content="Ilkinji telegramma botuňyzy Python bilen ýasamak: ädimme-ädim gollanma | Mekan Jumayev">
+<meta property="og:description" content="Telegram botlary durmuşyňyzy aňsatlaşdyrmak üçin güýçli gurallardyr. Bu makala, doly awtomatlaşdyrylan Telegram botyny döretmek üçin aňsat ädimler bilen tanyşdyrýar.1. Telegramda täze bot dörediňBot …">
+<meta property="og:url" content="https://makalam.com/ilkinji-telegramma-botunyzy-python-bilen-yasamak-adimme-adim-goll-583/">
+<meta property="og:image" content="https://makalam.com/cdn/media/images/85f5778a-d10a-46bf-8c5d-76b3e2a88b6b.webp">
 <meta name="twitter:site" content="@makalam_com">
 <meta name="msapplication-TileColor" content="#da532c">
-<link rel="canonical" href="https://makalam.com/biraz-basgaca-biraz-basgaca-587/">
+<style type="text/css">:root, :host {
+  --fa-font-solid: normal 900 1em/1 "Font Awesome 6 Solid";
+  --fa-font-regular: normal 400 1em/1 "Font Awesome 6 Regular";
+  --fa-font-light: normal 300 1em/1 "Font Awesome 6 Light";
+  --fa-font-thin: normal 100 1em/1 "Font Awesome 6 Thin";
+  --fa-font-duotone: normal 900 1em/1 "Font Awesome 6 Duotone";
+  --fa-font-sharp-solid: normal 900 1em/1 "Font Awesome 6 Sharp";
+  --fa-font-sharp-regular: normal 400 1em/1 "Font Awesome 6 Sharp";
+  --fa-font-sharp-light: normal 300 1em/1 "Font Awesome 6 Sharp";
+  --fa-font-brands: normal 400 1em/1 "Font Awesome 6 Brands";
+}
+
+svg:not(:root).svg-inline--fa, svg:not(:host).svg-inline--fa {
+  overflow: visible;
+  box-sizing: content-box;
+}
+
+.svg-inline--fa {
+  display: var(--fa-display, inline-block);
+  height: 1em;
+  overflow: visible;
+  vertical-align: -0.125em;
+}
+.svg-inline--fa.fa-2xs {
+  vertical-align: 0.1em;
+}
+.svg-inline--fa.fa-xs {
+  vertical-align: 0em;
+}
+.svg-inline--fa.fa-sm {
+  vertical-align: -0.0714285705em;
+}
+.svg-inline--fa.fa-lg {
+  vertical-align: -0.2em;
+}
+.svg-inline--fa.fa-xl {
+  vertical-align: -0.25em;
+}
+.svg-inline--fa.fa-2xl {
+  vertical-align: -0.3125em;
+}
+.svg-inline--fa.fa-pull-left {
+  margin-right: var(--fa-pull-margin, 0.3em);
+  width: auto;
+}
+.svg-inline--fa.fa-pull-right {
+  margin-left: var(--fa-pull-margin, 0.3em);
+  width: auto;
+}
+.svg-inline--fa.fa-li {
+  width: var(--fa-li-width, 2em);
+  top: 0.25em;
+}
+.svg-inline--fa.fa-fw {
+  width: var(--fa-fw-width, 1.25em);
+}
+
+.fa-layers svg.svg-inline--fa {
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.fa-layers-counter, .fa-layers-text {
+  display: inline-block;
+  position: absolute;
+  text-align: center;
+}
+
+.fa-layers {
+  display: inline-block;
+  height: 1em;
+  position: relative;
+  text-align: center;
+  vertical-align: -0.125em;
+  width: 1em;
+}
+.fa-layers svg.svg-inline--fa {
+  -webkit-transform-origin: center center;
+          transform-origin: center center;
+}
+
+.fa-layers-text {
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  -webkit-transform-origin: center center;
+          transform-origin: center center;
+}
+
+.fa-layers-counter {
+  background-color: var(--fa-counter-background-color, #ff253a);
+  border-radius: var(--fa-counter-border-radius, 1em);
+  box-sizing: border-box;
+  color: var(--fa-inverse, #fff);
+  line-height: var(--fa-counter-line-height, 1);
+  max-width: var(--fa-counter-max-width, 5em);
+  min-width: var(--fa-counter-min-width, 1.5em);
+  overflow: hidden;
+  padding: var(--fa-counter-padding, 0.25em 0.5em);
+  right: var(--fa-right, 0);
+  text-overflow: ellipsis;
+  top: var(--fa-top, 0);
+  -webkit-transform: scale(var(--fa-counter-scale, 0.25));
+          transform: scale(var(--fa-counter-scale, 0.25));
+  -webkit-transform-origin: top right;
+          transform-origin: top right;
+}
+
+.fa-layers-bottom-right {
+  bottom: var(--fa-bottom, 0);
+  right: var(--fa-right, 0);
+  top: auto;
+  -webkit-transform: scale(var(--fa-layers-scale, 0.25));
+          transform: scale(var(--fa-layers-scale, 0.25));
+  -webkit-transform-origin: bottom right;
+          transform-origin: bottom right;
+}
+
+.fa-layers-bottom-left {
+  bottom: var(--fa-bottom, 0);
+  left: var(--fa-left, 0);
+  right: auto;
+  top: auto;
+  -webkit-transform: scale(var(--fa-layers-scale, 0.25));
+          transform: scale(var(--fa-layers-scale, 0.25));
+  -webkit-transform-origin: bottom left;
+          transform-origin: bottom left;
+}
+
+.fa-layers-top-right {
+  top: var(--fa-top, 0);
+  right: var(--fa-right, 0);
+  -webkit-transform: scale(var(--fa-layers-scale, 0.25));
+          transform: scale(var(--fa-layers-scale, 0.25));
+  -webkit-transform-origin: top right;
+          transform-origin: top right;
+}
+
+.fa-layers-top-left {
+  left: var(--fa-left, 0);
+  right: auto;
+  top: var(--fa-top, 0);
+  -webkit-transform: scale(var(--fa-layers-scale, 0.25));
+          transform: scale(var(--fa-layers-scale, 0.25));
+  -webkit-transform-origin: top left;
+          transform-origin: top left;
+}
+
+.fa-1x {
+  font-size: 1em;
+}
+
+.fa-2x {
+  font-size: 2em;
+}
+
+.fa-3x {
+  font-size: 3em;
+}
+
+.fa-4x {
+  font-size: 4em;
+}
+
+.fa-5x {
+  font-size: 5em;
+}
+
+.fa-6x {
+  font-size: 6em;
+}
+
+.fa-7x {
+  font-size: 7em;
+}
+
+.fa-8x {
+  font-size: 8em;
+}
+
+.fa-9x {
+  font-size: 9em;
+}
+
+.fa-10x {
+  font-size: 10em;
+}
+
+.fa-2xs {
+  font-size: 0.625em;
+  line-height: 0.1em;
+  vertical-align: 0.225em;
+}
+
+.fa-xs {
+  font-size: 0.75em;
+  line-height: 0.0833333337em;
+  vertical-align: 0.125em;
+}
+
+.fa-sm {
+  font-size: 0.875em;
+  line-height: 0.0714285718em;
+  vertical-align: 0.0535714295em;
+}
+
+.fa-lg {
+  font-size: 1.25em;
+  line-height: 0.05em;
+  vertical-align: -0.075em;
+}
+
+.fa-xl {
+  font-size: 1.5em;
+  line-height: 0.0416666682em;
+  vertical-align: -0.125em;
+}
+
+.fa-2xl {
+  font-size: 2em;
+  line-height: 0.03125em;
+  vertical-align: -0.1875em;
+}
+
+.fa-fw {
+  text-align: center;
+  width: 1.25em;
+}
+
+.fa-ul {
+  list-style-type: none;
+  margin-left: var(--fa-li-margin, 2.5em);
+  padding-left: 0;
+}
+.fa-ul > li {
+  position: relative;
+}
+
+.fa-li {
+  left: calc(var(--fa-li-width, 2em) * -1);
+  position: absolute;
+  text-align: center;
+  width: var(--fa-li-width, 2em);
+  line-height: inherit;
+}
+
+.fa-border {
+  border-color: var(--fa-border-color, #eee);
+  border-radius: var(--fa-border-radius, 0.1em);
+  border-style: var(--fa-border-style, solid);
+  border-width: var(--fa-border-width, 0.08em);
+  padding: var(--fa-border-padding, 0.2em 0.25em 0.15em);
+}
+
+.fa-pull-left {
+  float: left;
+  margin-right: var(--fa-pull-margin, 0.3em);
+}
+
+.fa-pull-right {
+  float: right;
+  margin-left: var(--fa-pull-margin, 0.3em);
+}
+
+.fa-beat {
+  -webkit-animation-name: fa-beat;
+          animation-name: fa-beat;
+  -webkit-animation-delay: var(--fa-animation-delay, 0s);
+          animation-delay: var(--fa-animation-delay, 0s);
+  -webkit-animation-direction: var(--fa-animation-direction, normal);
+          animation-direction: var(--fa-animation-direction, normal);
+  -webkit-animation-duration: var(--fa-animation-duration, 1s);
+          animation-duration: var(--fa-animation-duration, 1s);
+  -webkit-animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+          animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+  -webkit-animation-timing-function: var(--fa-animation-timing, ease-in-out);
+          animation-timing-function: var(--fa-animation-timing, ease-in-out);
+}
+
+.fa-bounce {
+  -webkit-animation-name: fa-bounce;
+          animation-name: fa-bounce;
+  -webkit-animation-delay: var(--fa-animation-delay, 0s);
+          animation-delay: var(--fa-animation-delay, 0s);
+  -webkit-animation-direction: var(--fa-animation-direction, normal);
+          animation-direction: var(--fa-animation-direction, normal);
+  -webkit-animation-duration: var(--fa-animation-duration, 1s);
+          animation-duration: var(--fa-animation-duration, 1s);
+  -webkit-animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+          animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+  -webkit-animation-timing-function: var(--fa-animation-timing, cubic-bezier(0.28, 0.84, 0.42, 1));
+          animation-timing-function: var(--fa-animation-timing, cubic-bezier(0.28, 0.84, 0.42, 1));
+}
+
+.fa-fade {
+  -webkit-animation-name: fa-fade;
+          animation-name: fa-fade;
+  -webkit-animation-delay: var(--fa-animation-delay, 0s);
+          animation-delay: var(--fa-animation-delay, 0s);
+  -webkit-animation-direction: var(--fa-animation-direction, normal);
+          animation-direction: var(--fa-animation-direction, normal);
+  -webkit-animation-duration: var(--fa-animation-duration, 1s);
+          animation-duration: var(--fa-animation-duration, 1s);
+  -webkit-animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+          animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+  -webkit-animation-timing-function: var(--fa-animation-timing, cubic-bezier(0.4, 0, 0.6, 1));
+          animation-timing-function: var(--fa-animation-timing, cubic-bezier(0.4, 0, 0.6, 1));
+}
+
+.fa-beat-fade {
+  -webkit-animation-name: fa-beat-fade;
+          animation-name: fa-beat-fade;
+  -webkit-animation-delay: var(--fa-animation-delay, 0s);
+          animation-delay: var(--fa-animation-delay, 0s);
+  -webkit-animation-direction: var(--fa-animation-direction, normal);
+          animation-direction: var(--fa-animation-direction, normal);
+  -webkit-animation-duration: var(--fa-animation-duration, 1s);
+          animation-duration: var(--fa-animation-duration, 1s);
+  -webkit-animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+          animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+  -webkit-animation-timing-function: var(--fa-animation-timing, cubic-bezier(0.4, 0, 0.6, 1));
+          animation-timing-function: var(--fa-animation-timing, cubic-bezier(0.4, 0, 0.6, 1));
+}
+
+.fa-flip {
+  -webkit-animation-name: fa-flip;
+          animation-name: fa-flip;
+  -webkit-animation-delay: var(--fa-animation-delay, 0s);
+          animation-delay: var(--fa-animation-delay, 0s);
+  -webkit-animation-direction: var(--fa-animation-direction, normal);
+          animation-direction: var(--fa-animation-direction, normal);
+  -webkit-animation-duration: var(--fa-animation-duration, 1s);
+          animation-duration: var(--fa-animation-duration, 1s);
+  -webkit-animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+          animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+  -webkit-animation-timing-function: var(--fa-animation-timing, ease-in-out);
+          animation-timing-function: var(--fa-animation-timing, ease-in-out);
+}
+
+.fa-shake {
+  -webkit-animation-name: fa-shake;
+          animation-name: fa-shake;
+  -webkit-animation-delay: var(--fa-animation-delay, 0s);
+          animation-delay: var(--fa-animation-delay, 0s);
+  -webkit-animation-direction: var(--fa-animation-direction, normal);
+          animation-direction: var(--fa-animation-direction, normal);
+  -webkit-animation-duration: var(--fa-animation-duration, 1s);
+          animation-duration: var(--fa-animation-duration, 1s);
+  -webkit-animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+          animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+  -webkit-animation-timing-function: var(--fa-animation-timing, linear);
+          animation-timing-function: var(--fa-animation-timing, linear);
+}
+
+.fa-spin {
+  -webkit-animation-name: fa-spin;
+          animation-name: fa-spin;
+  -webkit-animation-delay: var(--fa-animation-delay, 0s);
+          animation-delay: var(--fa-animation-delay, 0s);
+  -webkit-animation-direction: var(--fa-animation-direction, normal);
+          animation-direction: var(--fa-animation-direction, normal);
+  -webkit-animation-duration: var(--fa-animation-duration, 2s);
+          animation-duration: var(--fa-animation-duration, 2s);
+  -webkit-animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+          animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+  -webkit-animation-timing-function: var(--fa-animation-timing, linear);
+          animation-timing-function: var(--fa-animation-timing, linear);
+}
+
+.fa-spin-reverse {
+  --fa-animation-direction: reverse;
+}
+
+.fa-pulse,
+.fa-spin-pulse {
+  -webkit-animation-name: fa-spin;
+          animation-name: fa-spin;
+  -webkit-animation-direction: var(--fa-animation-direction, normal);
+          animation-direction: var(--fa-animation-direction, normal);
+  -webkit-animation-duration: var(--fa-animation-duration, 1s);
+          animation-duration: var(--fa-animation-duration, 1s);
+  -webkit-animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+          animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+  -webkit-animation-timing-function: var(--fa-animation-timing, steps(8));
+          animation-timing-function: var(--fa-animation-timing, steps(8));
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fa-beat,
+.fa-bounce,
+.fa-fade,
+.fa-beat-fade,
+.fa-flip,
+.fa-pulse,
+.fa-shake,
+.fa-spin,
+.fa-spin-pulse {
+    -webkit-animation-delay: -1ms;
+            animation-delay: -1ms;
+    -webkit-animation-duration: 1ms;
+            animation-duration: 1ms;
+    -webkit-animation-iteration-count: 1;
+            animation-iteration-count: 1;
+    -webkit-transition-delay: 0s;
+            transition-delay: 0s;
+    -webkit-transition-duration: 0s;
+            transition-duration: 0s;
+  }
+}
+@-webkit-keyframes fa-beat {
+  0%, 90% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  45% {
+    -webkit-transform: scale(var(--fa-beat-scale, 1.25));
+            transform: scale(var(--fa-beat-scale, 1.25));
+  }
+}
+@keyframes fa-beat {
+  0%, 90% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  45% {
+    -webkit-transform: scale(var(--fa-beat-scale, 1.25));
+            transform: scale(var(--fa-beat-scale, 1.25));
+  }
+}
+@-webkit-keyframes fa-bounce {
+  0% {
+    -webkit-transform: scale(1, 1) translateY(0);
+            transform: scale(1, 1) translateY(0);
+  }
+  10% {
+    -webkit-transform: scale(var(--fa-bounce-start-scale-x, 1.1), var(--fa-bounce-start-scale-y, 0.9)) translateY(0);
+            transform: scale(var(--fa-bounce-start-scale-x, 1.1), var(--fa-bounce-start-scale-y, 0.9)) translateY(0);
+  }
+  30% {
+    -webkit-transform: scale(var(--fa-bounce-jump-scale-x, 0.9), var(--fa-bounce-jump-scale-y, 1.1)) translateY(var(--fa-bounce-height, -0.5em));
+            transform: scale(var(--fa-bounce-jump-scale-x, 0.9), var(--fa-bounce-jump-scale-y, 1.1)) translateY(var(--fa-bounce-height, -0.5em));
+  }
+  50% {
+    -webkit-transform: scale(var(--fa-bounce-land-scale-x, 1.05), var(--fa-bounce-land-scale-y, 0.95)) translateY(0);
+            transform: scale(var(--fa-bounce-land-scale-x, 1.05), var(--fa-bounce-land-scale-y, 0.95)) translateY(0);
+  }
+  57% {
+    -webkit-transform: scale(1, 1) translateY(var(--fa-bounce-rebound, -0.125em));
+            transform: scale(1, 1) translateY(var(--fa-bounce-rebound, -0.125em));
+  }
+  64% {
+    -webkit-transform: scale(1, 1) translateY(0);
+            transform: scale(1, 1) translateY(0);
+  }
+  100% {
+    -webkit-transform: scale(1, 1) translateY(0);
+            transform: scale(1, 1) translateY(0);
+  }
+}
+@keyframes fa-bounce {
+  0% {
+    -webkit-transform: scale(1, 1) translateY(0);
+            transform: scale(1, 1) translateY(0);
+  }
+  10% {
+    -webkit-transform: scale(var(--fa-bounce-start-scale-x, 1.1), var(--fa-bounce-start-scale-y, 0.9)) translateY(0);
+            transform: scale(var(--fa-bounce-start-scale-x, 1.1), var(--fa-bounce-start-scale-y, 0.9)) translateY(0);
+  }
+  30% {
+    -webkit-transform: scale(var(--fa-bounce-jump-scale-x, 0.9), var(--fa-bounce-jump-scale-y, 1.1)) translateY(var(--fa-bounce-height, -0.5em));
+            transform: scale(var(--fa-bounce-jump-scale-x, 0.9), var(--fa-bounce-jump-scale-y, 1.1)) translateY(var(--fa-bounce-height, -0.5em));
+  }
+  50% {
+    -webkit-transform: scale(var(--fa-bounce-land-scale-x, 1.05), var(--fa-bounce-land-scale-y, 0.95)) translateY(0);
+            transform: scale(var(--fa-bounce-land-scale-x, 1.05), var(--fa-bounce-land-scale-y, 0.95)) translateY(0);
+  }
+  57% {
+    -webkit-transform: scale(1, 1) translateY(var(--fa-bounce-rebound, -0.125em));
+            transform: scale(1, 1) translateY(var(--fa-bounce-rebound, -0.125em));
+  }
+  64% {
+    -webkit-transform: scale(1, 1) translateY(0);
+            transform: scale(1, 1) translateY(0);
+  }
+  100% {
+    -webkit-transform: scale(1, 1) translateY(0);
+            transform: scale(1, 1) translateY(0);
+  }
+}
+@-webkit-keyframes fa-fade {
+  50% {
+    opacity: var(--fa-fade-opacity, 0.4);
+  }
+}
+@keyframes fa-fade {
+  50% {
+    opacity: var(--fa-fade-opacity, 0.4);
+  }
+}
+@-webkit-keyframes fa-beat-fade {
+  0%, 100% {
+    opacity: var(--fa-beat-fade-opacity, 0.4);
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    -webkit-transform: scale(var(--fa-beat-fade-scale, 1.125));
+            transform: scale(var(--fa-beat-fade-scale, 1.125));
+  }
+}
+@keyframes fa-beat-fade {
+  0%, 100% {
+    opacity: var(--fa-beat-fade-opacity, 0.4);
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    -webkit-transform: scale(var(--fa-beat-fade-scale, 1.125));
+            transform: scale(var(--fa-beat-fade-scale, 1.125));
+  }
+}
+@-webkit-keyframes fa-flip {
+  50% {
+    -webkit-transform: rotate3d(var(--fa-flip-x, 0), var(--fa-flip-y, 1), var(--fa-flip-z, 0), var(--fa-flip-angle, -180deg));
+            transform: rotate3d(var(--fa-flip-x, 0), var(--fa-flip-y, 1), var(--fa-flip-z, 0), var(--fa-flip-angle, -180deg));
+  }
+}
+@keyframes fa-flip {
+  50% {
+    -webkit-transform: rotate3d(var(--fa-flip-x, 0), var(--fa-flip-y, 1), var(--fa-flip-z, 0), var(--fa-flip-angle, -180deg));
+            transform: rotate3d(var(--fa-flip-x, 0), var(--fa-flip-y, 1), var(--fa-flip-z, 0), var(--fa-flip-angle, -180deg));
+  }
+}
+@-webkit-keyframes fa-shake {
+  0% {
+    -webkit-transform: rotate(-15deg);
+            transform: rotate(-15deg);
+  }
+  4% {
+    -webkit-transform: rotate(15deg);
+            transform: rotate(15deg);
+  }
+  8%, 24% {
+    -webkit-transform: rotate(-18deg);
+            transform: rotate(-18deg);
+  }
+  12%, 28% {
+    -webkit-transform: rotate(18deg);
+            transform: rotate(18deg);
+  }
+  16% {
+    -webkit-transform: rotate(-22deg);
+            transform: rotate(-22deg);
+  }
+  20% {
+    -webkit-transform: rotate(22deg);
+            transform: rotate(22deg);
+  }
+  32% {
+    -webkit-transform: rotate(-12deg);
+            transform: rotate(-12deg);
+  }
+  36% {
+    -webkit-transform: rotate(12deg);
+            transform: rotate(12deg);
+  }
+  40%, 100% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+}
+@keyframes fa-shake {
+  0% {
+    -webkit-transform: rotate(-15deg);
+            transform: rotate(-15deg);
+  }
+  4% {
+    -webkit-transform: rotate(15deg);
+            transform: rotate(15deg);
+  }
+  8%, 24% {
+    -webkit-transform: rotate(-18deg);
+            transform: rotate(-18deg);
+  }
+  12%, 28% {
+    -webkit-transform: rotate(18deg);
+            transform: rotate(18deg);
+  }
+  16% {
+    -webkit-transform: rotate(-22deg);
+            transform: rotate(-22deg);
+  }
+  20% {
+    -webkit-transform: rotate(22deg);
+            transform: rotate(22deg);
+  }
+  32% {
+    -webkit-transform: rotate(-12deg);
+            transform: rotate(-12deg);
+  }
+  36% {
+    -webkit-transform: rotate(12deg);
+            transform: rotate(12deg);
+  }
+  40%, 100% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+}
+@-webkit-keyframes fa-spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+@keyframes fa-spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+.fa-rotate-90 {
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+}
+
+.fa-rotate-180 {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
+.fa-rotate-270 {
+  -webkit-transform: rotate(270deg);
+          transform: rotate(270deg);
+}
+
+.fa-flip-horizontal {
+  -webkit-transform: scale(-1, 1);
+          transform: scale(-1, 1);
+}
+
+.fa-flip-vertical {
+  -webkit-transform: scale(1, -1);
+          transform: scale(1, -1);
+}
+
+.fa-flip-both,
+.fa-flip-horizontal.fa-flip-vertical {
+  -webkit-transform: scale(-1, -1);
+          transform: scale(-1, -1);
+}
+
+.fa-rotate-by {
+  -webkit-transform: rotate(var(--fa-rotate-angle, none));
+          transform: rotate(var(--fa-rotate-angle, none));
+}
+
+.fa-stack {
+  display: inline-block;
+  vertical-align: middle;
+  height: 2em;
+  position: relative;
+  width: 2.5em;
+}
+
+.fa-stack-1x,
+.fa-stack-2x {
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: var(--fa-stack-z-index, auto);
+}
+
+.svg-inline--fa.fa-stack-1x {
+  height: 1em;
+  width: 1.25em;
+}
+.svg-inline--fa.fa-stack-2x {
+  height: 2em;
+  width: 2.5em;
+}
+
+.fa-inverse {
+  color: var(--fa-inverse, #fff);
+}
+
+.sr-only,
+.fa-sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.sr-only-focusable:not(:focus),
+.fa-sr-only-focusable:not(:focus) {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.svg-inline--fa .fa-primary {
+  fill: var(--fa-primary-color, currentColor);
+  opacity: var(--fa-primary-opacity, 1);
+}
+
+.svg-inline--fa .fa-secondary {
+  fill: var(--fa-secondary-color, currentColor);
+  opacity: var(--fa-secondary-opacity, 0.4);
+}
+
+.svg-inline--fa.fa-swap-opacity .fa-primary {
+  opacity: var(--fa-secondary-opacity, 0.4);
+}
+
+.svg-inline--fa.fa-swap-opacity .fa-secondary {
+  opacity: var(--fa-primary-opacity, 1);
+}
+
+.svg-inline--fa mask .fa-primary,
+.svg-inline--fa mask .fa-secondary {
+  fill: black;
+}
+
+.fad.fa-inverse,
+.fa-duotone.fa-inverse {
+  color: var(--fa-inverse, #fff);
+}</style><link rel="canonical" href="https://makalam.com/ilkinji-telegramma-botunyzy-python-bilen-yasamak-adimme-adim-goll-583/">
 <link rel="search" type="application/opensearchdescription+xml" href="https://makalam.com/osd.xml" title="Makalam">
-<link href="https://makalam.com/cdn/static/dist/css/main.min.c5cccd3b421e.css" rel="stylesheet">
+<link href="./m2_files/main.min.c5cccd3b421e.css" rel="stylesheet">
 <link rel="apple-touch-icon" sizes="180x180" href="https://makalam.com/cdn/static/img/favicon/apple-touch-icon.da28680fa026.png">
 <link rel="icon" type="image/png" sizes="32x32" href="https://makalam.com/cdn/static/img/favicon/favicon-32x32.02957ad65913.png">
 <link rel="icon" type="image/png" sizes="16x16" href="https://makalam.com/cdn/static/img/favicon/favicon-16x16.813d76399f40.png">
 <link rel="search" type="application/opensearchdescription+xml" title="Makalam" href="https://makalam.com/osd.xml">
+<script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "makalam",
+        "url": "https://makalam.com/ilkinji-telegramma-botunyzy-python-bilen-yasamak-adimme-adim-goll-583/"
+    }
+</script>
+<script type="text/javascript">
+    const isAuthenticated =  true 
+    const userFullName = "Nazar Velkakayev"
+    const userAvatar = "https://makalam.com/cdn/static/img/default_avatar.bcd70b0c7fa4.webp"
+    const csrfToken =  "ukxIrzSzM1juiuYTQOf2ocOepJGMLAi6vO1wf9gJrt3aLApuEZBZ148Cs1tMEgyb"
+    const loginRedirectURL = "/login/?next=/ilkinji-telegramma-botunyzy-python-bilen-yasamak-adimme-adim-goll-583/"
+    const authRequiredMessage = "Agza bolmaly!"
+</script>
+<script defer="" type="text/javascript" src="./m2_files/flowbite.min.4e4db0412016.js"></script>
+<script defer="" type="text/javascript" src="./m2_files/main.min.6683b27d1368.js"></script>
+<script defer="" type="text/javascript" src="./m2_files/fontawesome.min.035901e3edb0.js"></script>
+
+<script async="" src="./m2_files/js" type="text/javascript"></script>
+<script type="text/javascript">
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+        gtag('config', 'G-TKDKMSSGWN');
+        
+        gtag('set', {
+            'user_id': 'n41'
+        });
+        
+    </script>
+
+<script async="" src="./m2_files/f(2).txt" crossorigin="anonymous" type="text/javascript" data-checked-head="true"></script>
+<script async="" src="./m2_files/pub-1536780350082778" nonce="" type="text/javascript"></script>
+<script nonce="" type="text/javascript">(function() {function signalGooglefcPresent() {if (!window.frames['googlefcPresent']) {if (document.body) {const iframe = document.createElement('iframe'); iframe.style = 'width: 0; height: 0; border: none; z-index: -1000; left: -1000px; top: -1000px;'; iframe.style.display = 'none'; iframe.name = 'googlefcPresent'; document.body.appendChild(iframe);} else {setTimeout(signalGooglefcPresent, 0);}}}signalGooglefcPresent();})();</script>
+<script defer="" type="text/javascript" src="./m2_files/highlight.min.feafddd1a7cc.js"></script>
+<link rel="stylesheet" href="./m2_files/highlight.min.d09e25c58510.css">
 <meta property="og:article" content="article">
-<meta property="article:published_time" content="2023-09-14T10:03:05.847024+05:00 ">
+<meta property="article:published_time" content="2023-09-11T19:38:49.151113+05:00 ">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:creator" content="Ilyas">
+<meta name="twitter:creator" content="MekanJ">
 <meta name="twitter:cta" content="Makalam-da okaň">
 <meta name="robots" content="noindex">
-<meta name="keywords" content="şahsy pikirim">
-<title>Biraz Başgaça' - biraz başgaça | Ylýas Amangeldiýew</title>
-<body class="flex flex-col h-screen justify-between dark:bg-primary-950">
+<script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Article",
+            "headline": "Ilkinji telegramma botuňyzy Python bilen ýasamak: ädimme-ädim gollanma | Mekan Jumayev",
+            "datePublished": "2023-09-11T19:38:49.151113+05:00 ",
+            "author": {
+                "@type": "Person",
+                "name": "Mekan Jumayev",
+                "url": "https://makalam.com/ilkinji-telegramma-botunyzy-python-bilen-yasamak-adimme-adim-goll-583/"
+            }
+        }
+    </script>
+<script type="text/javascript">
+        const articleReportSuccessMessage = "Makala üstünlikli şikaýat edildi."
+        const commentReportSuccessMessage = "Teswir üstünlikli şikaýat edildi."
+        const commentEditSuccessMessage = "Teswir üstünlikli üýtgedildi."
+        const commentEditText = "Üýtget"
+    </script>
+<meta name="keywords" content="python">
+<title>Ilkinji telegramma botuňyzy Python bilen ýasamak: ädimme-ädim gollanma | Mekan Jumayev</title>
+<meta http-equiv="origin-trial" content="A7CQXglZzTrThjGTBEn1rWTxHOEtkWivwzgea+NjyardrwlieSjVuyG44PkYgIPGs8Q9svD8sF3Yedn0BBBjXAkAAACFeyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiUHJpdmFjeVNhbmRib3hBZHNBUElzIiwiZXhwaXJ5IjoxNjk1MTY3OTk5LCJpc1N1YmRvbWFpbiI6dHJ1ZSwiaXNUaGlyZFBhcnR5Ijp0cnVlfQ=="><meta http-equiv="origin-trial" content="A3vKT9yxRPjmXN3DpIiz58f5JykcWHjUo/W7hvmtjgh9jPpQgem9VbADiNovG8NkO6mRmk70Kex8/KUqAYWVWAEAAACLeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiUHJpdmFjeVNhbmRib3hBZHNBUElzIiwiZXhwaXJ5IjoxNjk1MTY3OTk5LCJpc1N1YmRvbWFpbiI6dHJ1ZSwiaXNUaGlyZFBhcnR5Ijp0cnVlfQ=="><meta http-equiv="origin-trial" content="A4A26Ymj79UVY7C7JGUS4BG1s7MdcDokAQf/RP0paks+RoTYbXHxceT/5L4iKcsleFCngi75YfNRGW2+SpVv1ggAAACLeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXRhZ3NlcnZpY2VzLmNvbTo0NDMiLCJmZWF0dXJlIjoiUHJpdmFjeVNhbmRib3hBZHNBUElzIiwiZXhwaXJ5IjoxNjk1MTY3OTk5LCJpc1N1YmRvbWFpbiI6dHJ1ZSwiaXNUaGlyZFBhcnR5Ijp0cnVlfQ=="><meta http-equiv="origin-trial" content="As0hBNJ8h++fNYlkq8cTye2qDLyom8NddByiVytXGGD0YVE+2CEuTCpqXMDxdhOMILKoaiaYifwEvCRlJ/9GcQ8AAAB8eyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3MTk1MzI3OTksImlzU3ViZG9tYWluIjp0cnVlfQ=="><meta http-equiv="origin-trial" content="AgRYsXo24ypxC89CJanC+JgEmraCCBebKl8ZmG7Tj5oJNx0cmH0NtNRZs3NB5ubhpbX/bIt7l2zJOSyO64NGmwMAAACCeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3MTk1MzI3OTksImlzU3ViZG9tYWluIjp0cnVlfQ=="><script async="" src="./m2_files/ca-pub-1536780350082778"></script></head>
+<body class="flex flex-col h-screen justify-between pt-16 dark:bg-primary-950">
+
+<div id="logout-confirm" tabindex="-1" class="fixed top-0 left-0 right-0 z-50 hidden p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-modal h-full justify-center items-center">
+<div class="relative w-full max-w-md h-auto">
+<div class="relative bg-white rounded-lg shadow dark:bg-primary-700">
+<button type="button" class="absolute top-3 right-2.5 text-primary-400 bg-transparent hover:bg-primary-200 hover:text-primary-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-primary-800 dark:hover:text-white" data-modal-toggle="logout-confirm">
+<svg class="svg-inline--fa fa-xmark w-5 h-5" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="xmark" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" data-fa-i2svg=""><path fill="currentColor" d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"></path></svg><!-- <i class="fa-solid fa-xmark w-5 h-5"></i> Font Awesome fontawesome.com -->
+<span class="sr-only">Ýap</span>
+</button>
+<div class="p-6 text-center">
+<h3 class="mb-5 text-lg font-normal text-primary-500 dark:text-primary-400">
+Sahypadan çykmak isleýärsiňizmi?
+</h3>
+<a href="https://makalam.com/logout/" class="text-white bg-primary-600 hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm inline-flex items-center px-5 py-2.5 text-center mr-2 dark:focus:ring-primary-800 dark:bg-red-800 dark:hover:bg-red-600">
+Çyk
+</a>
+<button data-modal-toggle="logout-confirm" type="button" class="text-primary-500 bg-white hover:bg-primary-100 focus:ring-4 focus:outline-none focus:ring-primary-200 rounded-lg border border-primary-200 text-sm font-medium px-5 py-2.5 hover:text-primary-900 focus:z-10 dark:bg-primary-700 dark:text-primary-300 dark:border-primary-500 dark:hover:text-white dark:hover:bg-primary-600 dark:focus:ring-primary-600">
+Ýap
+</button>
+</div>
+</div>
+</div>
+</div>
 <main class="flex-grow" style="height: auto !important;">
-<section class="bg-white dark:bg-primary-950">
+
+<div aria-labelledby="comments-list" class="fixed z-40 right-0 top-0 h-full p-4 pt-0 overflow-y-auto bg-white w-full md:w-1/2 lg:w-1/3 transition-transform translate-x-full shadow-lg dark:bg-primary-900" id="comments" tabindex="-1" aria-hidden="true">
+<section class="bg-white dark:bg-primary-900">
+<div class="relative max-w-2xl mx-auto px-4">
+<div class="sticky top-0 left-0 flex flex-nowrap justify-between items-center bg-white dark:bg-primary-900 p-4">
+<h2 class="text-lg lg:text-2xl font-bold text-primary-900 dark:text-white">Teswirler (<span class="total-comment-count">2</span>)</h2>
+<button type="button" aria-controls="comments" class="toggle-drawer text-primary-400 bg-transparent hover:bg-primary-200 hover:text-primary-900 rounded-lg text-sm p-1.5 inline-flex items-center dark:hover:bg-primary-600 dark:hover:text-white">
+<svg class="svg-inline--fa fa-xmark w-5 h-5" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="xmark" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" data-fa-i2svg=""><path fill="currentColor" d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"></path></svg><!-- <i class="fa-solid fa-xmark w-5 h-5"></i> Font Awesome fontawesome.com -->
+<span class="sr-only">Ýap</span>
+</button>
+</div>
+<form class="mb-6 comment-form">
+<input type="hidden" name="article" value="583">
+<div class="py-2 px-4 mb-4 bg-white rounded-lg rounded-t-lg border border-primary-200 dark:bg-primary-900 dark:border-primary-500">
+<label class="sr-only" for="content">Siziň teswiriňiz"</label>
+<textarea class="px-0 resize-none w-full text-base placeholder:text-base text-primary-900 border-0 focus:ring-0 focus:outline-none dark:text-white dark:placeholder-primary-400 dark:bg-primary-900" id="comment-content" placeholder="Ibermek üçin &#39;Ctrl + Enter&#39; basyň" name="content" maxlength="750" required="" rows="6"></textarea>
+</div>
+<div class="flex justify-end items-center">
+<button class="active order-last text-white bg-green-600 hover:bg-green-500 focus:outline-none focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 dark:bg-green-600 dark:hover:bg-green-500 dark:focus:ring-green-500 dark:border-green-500" type="submit">
+Paýlaş
+</button>
+</div>
+</form>
+
+
+
+
+
+
+
+<div>
+<div class="infinite-comments-container">
+</div>
+<div class="comments-loading flex flex-col justify-center items-center mb-4 mt-4" role="status">
+<svg class="svg-inline--fa fa-spinner animate-spin" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="spinner" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M304 48a48 48 0 1 0 -96 0 48 48 0 1 0 96 0zm0 416a48 48 0 1 0 -96 0 48 48 0 1 0 96 0zM48 304a48 48 0 1 0 0-96 48 48 0 1 0 0 96zm464-48a48 48 0 1 0 -96 0 48 48 0 1 0 96 0zM142.9 437A48 48 0 1 0 75 369.1 48 48 0 1 0 142.9 437zm0-294.2A48 48 0 1 0 75 75a48 48 0 1 0 67.9 67.9zM369.1 437A48 48 0 1 0 437 369.1 48 48 0 1 0 369.1 437z"></path></svg><!-- <i class="fa-solid fa-spinner animate-spin"></i> Font Awesome fontawesome.com -->
+<span class="sr-only">Ýüklenýär...</span>
+</div>
+<a class="infinite-more-comments-link" href="https://makalam.com/comments/?article=583"></a>
+</div>
+<script type="text/javascript">
+            const articleId = "583"
+            const commentsURL = "/api/articles/comments/"
+
+            // translations
+            const commentSuccessMessage = "Teswir paýlaşyldy."
+            const replySuccessMessage = "Jogap paýlaşyldy."
+            const commentDeleteSuccessMessage = "Teswir pozuldy."
+            const deleteCommentText = "Poz"
+            const hideReplies = "jogaplary gizle"
+            const replies = "jogaplar"
+            const reply = "Jogap ber"
+            const loading = "Ýüklenýär..."
+            const shareReply = "Jogaby iber"
+            const commentPlaceholder = "Ibermek üçin 'Ctrl + Enter' basyň"
+        </script>
+<script defer="" src="./m2_files/v8b253dfea2ab4077af8c6f58422dfbfd1689876627854" integrity="sha512-bjgnUKX4azu3dLTVtie9u6TKqgx29RBwfj3QXYt5EKfWM/9hPSAI/4qcV5NACjwAo8UtTeWefx6Zq5PHcMm7Tg==" data-cf-beacon="{&quot;rayId&quot;:&quot;807f8ac90a202bb9&quot;,&quot;version&quot;:&quot;2023.8.0&quot;,&quot;r&quot;:1,&quot;token&quot;:&quot;32d250cda9ac477db1918dd0aa1ae136&quot;,&quot;si&quot;:100}" crossorigin="anonymous"></script>
+
+
+</div>
+</section>
+</div>
+<section class="pt-8 lg:pt-16 bg-white dark:bg-primary-950">
 <div id="articleContent" class="flex justify-between px-4 mx-auto max-w-screen-lg py-8">
 <article class="mx-auto w-full max-w-2xl format format-sm sm:format-base lg:format-lg format-primary dark:format-invert">
-<div class="ck-content mt-4 break-words"><p><img src="https://makalam.com/cdn/media/images/279e34a7-514c-4748-8918-b21a188bd6c0.webp">Biraz başgaça agzamyz Türkmenistana gidip gelipdir-de özüni erbet duýupdyr. Birbada onuň sebäbine-de düşünip bilmändir. Özüni garaňkyda sermeläp ýören ýaly duýupdyr. Bulary okap “Be gyzymyza nä döw çaldyka?” diýip ýazgynyň yzyny okamaga howlukdym. Eger dogry düşünen bolsam bizde aýal-gyzlar diňlenilmeýärmiş, olaryň pikirleri diňlenilmeýärmiş, kararlary we hereketleri öz ygtyýarlarynda dälmiş. Aýal-gyzlara deko hem hyzmatçy ýaly garalýarmyş. Ondan garaşylýan zat gowja hem asylly bolmak.&nbsp;</p><p>Ýalňyşmaýan bolsam türkmeniň gyzy asyllylygy bilen başgalardan tapawutlanyp gelipdir. Erkekleriň bagtyny üpjün etmek betbagtçylykmy? Erkekler-ä öz aýallaryny bagtly edip bilseler armanlary ýok. Bu ata-baba türkmende gelýän däp. Taryhy maglumatlaryň birinde türkmen aýallarynyň ata-babalarymyzyň döwründe dakynan bezeg şaýlarynyň agramy 7 kilograma çenli baryp ýetýän eken. Aýalyňa 7 kilogram şaý-sep dakaýjak bolsaň aňsatmydyr. Türkmenistanda gyzyl-kümüşemä önenok. Emma erkekler muny kyn görmändirler.&nbsp; Başga milletleriň aýallary suw almaga gidenlerinde eginlerine agaç atyp, oňam her ujuna uly bedräni dakyp gidipdirler. Türkmen gelin-gyzlarynyň bolsa eginlerinde 4-5 litrlik ýeke küýze bolupdyr.&nbsp; Aýal-gyzlaryň sözi diňlenmedik bolsa Güljemal hana näme üçin han diýipdirler? Gökdepe urşunda näçe adam ölendir diýip soranlarynda bir türkmen aýal 3-4 sany adam diýipdir. Ol soň 3-4 sany batyryň, serdaryň adyny agzap, galanlaryny biz dogurarys, şolar dogulmaz diýipdir.&nbsp;</p><p>Bir adamy bagtly edip bilmek özüňi bagtly etmegi aňlatmaýarmy? Men öz görenlerimden mysal alaýyn, ejem kakam üçin başyny gurban etmäge taýýardy. Kakamam ejemi başyna täç edinýärdi. Gelnejemden “Agam seni söýýämidi?” diýip soradyk. O wagt agam ýogalypdy, gelnejemizem ak gyňaçly enedi. Şonda gelnejemem “Söýýädimi ony bilemok. Ýöne bir gezek elimden gelse döşümi ýaryp, ýüregimi alyp seň ýüregiň ýanynda goýardym” diýdi diýip agamyň aýdanlaryny gürrüň berdi.</p><p>Aýal adama mundan ýokarda nähili bagt gerek (maşgala durmyşynda).</p><p>Döwlet derejesinde aýal gyzlarymyza berilýän erkinlik, olar üçin döredilýän mümkinçilik erkeklere berilýänden pesmi? Bizde Türkmenistanyň Gahrymany Gözel Şagulyýewa bolaýyn diýselerem gyzlarymyzda, aýallarymyzda mümkinçilik bar.&nbsp;</p><p>Şu ýerde gaty gadymy medeniýeti bolan ýapon halkynda aýýallara erkekleriň kölegesine basmagam gadagan ekendigi hakynda okanym ýadyma düşdi. Erkek kişi öýe girende ýapon aýallaryna ýerinden turmak aýp hasaplanypdyr.&nbsp;</p><p>Durmuşda her kimiň öz orny bar. Aýýallar erkekleşjek bolsalar, erkeklerem aýallaşsalar ine betbagtçylyk nämede.&nbsp; Birdöwür Moskwanyň “Literaturnaýa gazeta” diýen gzetinde Towşan Esenowaň türkmenler gyzlaryny satýarlar diýen manydaky makalasy çap edilipdi. Şondan soň bir topar enäni gyzyny satypdyr diýip türmä-de basypdylar. Gyzlara ejeleriniň ýüzüne gelmäge mejbur edipdiler. Ýogsa galyň meselesi tutuş orta Aziýada bar zat. Emma masgara biz bolduk. Muny ýatlaýanym ýokardaky ýazgyny başga dillere terjime edip internede goýmak hakynda aýdylan teswiri hem ýazgyny ýazanyňam muňa göwünjeňdigini&nbsp; okadym. Bolaýjak. Ýerli-ýerden şeýdibersek türkmeniň abraýy dag aşar. &nbsp;</p></div>
+
+
+<div class="ck-content mt-4 break-words"><p>Telegram botlary durmuşyňyzy aňsatlaşdyrmak üçin güýçli gurallardyr. Bu makala, doly awtomatlaşdyrylan Telegram botyny döretmek üçin aňsat ädimler bilen tanyşdyrýar.</p><figure class="image image_resized" style="width:90%;"><img src="./m2_files/85f5778a-d10a-46bf-8c5d-76b3e2a88b6b.webp"></figure><p><strong>1. Telegramda täze bot dörediň</strong></p><p>Bot ýasamak üçin ilkinji ädim Telegramyň öz <a target="_blank" href="https://t.me/BotFather">BotFather</a>-den başlaýar. Botlary döretmäge, dolandyrmaga we pozmaga kömek etmek üçin Telegram tarapyndan döredilen özboluşly bot.&nbsp;</p><figure class="image image_resized" style="width:90%;"><img src="./m2_files/9a58c8db-9541-4477-b55b-b5a2b1f06b13.webp"></figure><ol><li>@BotFather bilen söhbetdeşlige başlaň</li><li><strong>/newbot</strong> buýrugyny ulanyň</li><li>Botuňyza at beriň</li><li>Bot adyňyza 'bot' bilen gutarýan at beriň</li></ol><p>Edil şonuň ýaly, öz botuňyzy döretdiňiz, @BotFather tarapyndan berlen Linke (ssylka) basyň we botuňyza girip, yazyp bilersiňiz.</p><p>&nbsp;</p><p><strong>2. Boty başlamak üçin kod</strong></p><p>Ilki bilen python'da telegram kitaphanasyny gurmaly bolarys.</p><pre><code class="language-python hljs">pip install python-telegram-bot==<span class="hljs-number">12.0</span><span class="hljs-number">.0</span></code></pre><p>Indi 'configure.py' ady bilen python faýly döredeliň. We botumyz baradaky maglumatlary saklalyň:</p><pre><code class="language-python hljs"><span class="hljs-comment"># configure.py</span>
+config = {
+ <span class="hljs-string">'name'</span>: <span class="hljs-string">'botnameBot'</span>,
+ <span class="hljs-string">'token'</span>: <span class="hljs-string">'bot token shu yere'</span>,
+ <span class="hljs-string">'url'</span>: <span class="hljs-string">'https://api.telegram.org/bot'</span>
+}</code></pre><p>Indi 'main.py' ady bilen python faýly döredeliň. We esasy kitaphanalary import edeli ilki bilen:</p><pre><code class="language-python hljs"><span class="hljs-keyword">from</span> telegram <span class="hljs-keyword">import</span> *
+<span class="hljs-keyword">from</span> telegram.ext <span class="hljs-keyword">import</span> *
+<span class="hljs-keyword">from</span> telegram.utils.request <span class="hljs-keyword">import</span> Request
+
+<span class="hljs-keyword">from</span> configure <span class="hljs-keyword">import</span> config
+<span class="hljs-keyword">import</span> os
+
+token = config[<span class="hljs-string">'token'</span>]
+url = config[<span class="hljs-string">'url'</span>]</code></pre><p>Boty başlamak we handler' leri hasaba almak üçin, her bot üçin başlangyç <strong>/start</strong> ýaly buýruklar bolyar:</p><pre><code class="language-python hljs"><span class="hljs-keyword">def</span> <span class="hljs-title function_">main</span>():
+ req = Request(
+ connect_timeout=<span class="hljs-number">0.5</span>,
+ read_timeout=<span class="hljs-number">1.0</span>
+ )
+ 
+ bot = Bot(
+ token=token,
+ request=req,
+ base_url=url
+ )
+ 
+ updater = Updater(
+ bot=bot,
+ use_context=<span class="hljs-literal">True</span>
+ )
+ start_handler = CommandHandler(<span class="hljs-string">"start"</span>, start)
+ dp = updater.dispatcher
+
+ dp.add_handler(start_handler)
+ 
+ updater.start_polling()
+ updater.idle()
+
+
+<span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">'__main__'</span>:
+ main()</code></pre><p><strong>3. CommandHandler</strong></p><p>Oýnawaç robotyňyzyň bardygyny göz öňüne getiriň. Sen oňa: "Robot, tans et!" diyip buýruk beryän we tans edip başlaýar. Bu ýerde "tans" beren buýrugyňyza meňzeýär. Telegram botlary dünýäsinde <strong>CommandHandler </strong>botyň "/start" ýa-da "/tanset" ýazanyňyz ýaly berjek aýratyn buýruklaryňyzy diňlemegine kömek edýär.</p><pre><code class="language-python hljs"><span class="hljs-keyword">def</span> <span class="hljs-title function_">tans_et</span>(<span class="hljs-params">update, context</span>):
+ update.message.reply_text(<span class="hljs-string">"Tans edyarin:))"</span>)
+
+
+tans_handler = CommandHandler(<span class="hljs-string">'tanset'</span>, tans_et)
+dispatcher.add_handler(tans_handler )</code></pre><p><strong>4. MessageHandler</strong></p><p>Indi buýruklardan başga-da robotyňyz bilen gürleşýärsiňiz, ulanyjy hökmünde bot'a habar (text) ýazýarsyňyz. <strong>MessageHandler </strong>bot-a umumy habarlary (yazan text'lerinizi) diňlemäge we yzyna jogap bermäge kömek edýär.</p><pre><code class="language-python hljs"><span class="hljs-keyword">def</span> <span class="hljs-title function_">echo</span>(<span class="hljs-params">update, context</span>):
+	<span class="hljs-comment"># siz näme ýazsaňam, şony yzyna ýazýar (ugradyar)</span>
+ update.message.reply_text(update.message.text)
+
+
+echo_handler = MessageHandler(Filters.text, echo)
+dispatcher.add_handler(echo_handler)</code></pre><p><strong>5. KeyboardButton</strong></p><p>Oýnawaç robotyňyzda "Aýdym aýt", "Tans et" ýa-da "Bök" ýaly düwmeleriň (knopka) bardygyny göz öňüne getiriň. Bir düwmä basanyňyzda, robot şol hereketi edýär. Telegramda, <strong>KeyboardButton </strong>söhbetdeşlikde şeýle basyp bolýan düwmeleri döredýär.</p><p><strong>Näme üçin ulanmaly?</strong><br>Şeylelik bilen, siz her gezek buýruk ýazmak hökman däl; diňe bir düwmä basyň, bot näme etmelidigini biler.</p><figure class="image image_resized" style="width:90%;"><img src="./m2_files/63a45ccc-adcc-4d84-8f2f-35d502b81b44.webp"></figure><pre><code class="language-python hljs">keyboard = [[KeyboardButton(<span class="hljs-string">"Button1"</span>), KeyboardButton(<span class="hljs-string">"Button2"</span>)]]
+markup = ReplyKeyboardMarkup(keyboard)
+update.message.reply_text(<span class="hljs-string">"Text"</span>, reply_markup=markup)</code></pre><p><strong>6. InlineKeyboardButton</strong></p><p>Bulary habaryň içindäki gizlin düwmeler diýip pikir ediň. Robotyňyz size "Aýdym saýlaň: Bagtly ýa-da gynandyryjy" diýen habary görkezýär diýeliň. Edil şol habarda iki düwme bar: "Bagtly" we "Gynandyryjy". Birine basanyňyzda, robot şol aýdymy ýerine ýetirýär. “InlineKeyboardButton” Telegramda şeýle edýär.</p><figure class="image image_resized" style="width:90%;"><img src="./m2_files/7cda51ad-5428-4344-8aa7-271f113e2bd5.webp"></figure><pre><code class="language-python hljs">keyboard = [[InlineKeyboardButton(<span class="hljs-string">"Bagtly"</span>, callback_data=<span class="hljs-string">'1'</span>), InlineKeyboardButton(<span class="hljs-string">"Gynandyryjy"</span>, callback_data=<span class="hljs-string">'2'</span>)]]
+markup = InlineKeyboardMarkup(keyboard)
+update.message.reply_text(<span class="hljs-string">'Aýdym saýlaň: Bagtly ýa-da gynandyryjy:'</span>, reply_markup=markup)</code></pre><p><strong>7. CallbackQueryHandler</strong></p><p>"Bagtly" we "Gynandyryjy" aýdym düwmelerini ýadyňyzdamy? Birini basanyňyzdan soň näme bolýar? Robot bilmeli we reaksiýa bermeli. <strong>CallbackQueryHandler </strong>botyň haýsy düwmä basylandygyny we mundan soň näme etmelidigine karar berýär.</p><pre><code class="language-python hljs"><span class="hljs-keyword">def</span> <span class="hljs-title function_">button</span>(<span class="hljs-params">update, context</span>):
+ query = update.callback_query
+ <span class="hljs-keyword">if</span> query.data == <span class="hljs-string">"1"</span>:
+ query.edit_message_text(<span class="hljs-string">"Siz 'Bagtly' aydym sayladynyz!"</span>)
+
+button_handler = CallbackQueryHandler(button)
+dispatcher.add_handler(button_handler)</code></pre><p><strong>8. CallbackContext</strong></p><p>Robotyňyzyň halaýan reňkiňiz ýa-da aýdymyňyz ýaly siz hakda bellikleri saklaýan kiçijik sumkasy bar diýip göz öňüne getiriň. “<strong>CallbackContext</strong>” “Telegram” boty üçin şol sumka ýalydyr. Botyň sizi has gowy tanamagyna we şoňa görä jogap bermegine kömek etmek üçin söhbet ýa-da ulanyjy hakda zatlary ýada salýar.</p><p><br>Şeylelik bilen, bot geçmişdäki zatlary ýatda saklap we siziň bilen has şahsy gürleşmek üçin ulanyp biler.</p><pre><code class="language-python hljs"><span class="hljs-keyword">def</span> <span class="hljs-title function_">add_data</span>(<span class="hljs-params">update, context</span>):
+ context.user_data[<span class="hljs-string">'some_data'</span>] = <span class="hljs-string">"This is a test!"</span>
+
+<span class="hljs-keyword">def</span> <span class="hljs-title function_">retrieve_data</span>(<span class="hljs-params">update, context</span>):
+ update.message.reply_text(context.user_data.get(<span class="hljs-string">'some_data'</span>, <span class="hljs-string">"No data found"</span>))
+</code></pre><p><strong>9. Dokument ugratmak</strong></p><p>Python bilen islendik formatda faýllary telegram botyna iberip bilersiňiz.</p><pre><code class="language-python hljs"><span class="hljs-keyword">with</span> <span class="hljs-built_in">open</span>(<span class="hljs-string">'some_document.txt'</span>, <span class="hljs-string">'rb'</span>) <span class="hljs-keyword">as</span> doc:
+ context.bot.send_document(chat_id=update.message.chat_id, document=doc)</code></pre><p><strong>Netije:</strong><br>Python bilen Telegram botyny ýasamak başda çylşyrymly bolup görünmegi mümkin, ýöne ädimme-ädim owrenilse, bu gaty ansat.</p><p>Has çuňňur wizual gollanma üçin wideo sapagymy barlamagy ýatdan çykarmaň:&nbsp;</p><p>Youtube:&nbsp;</p><figure class="media"><div><div style=""><iframe src="./m2_files/SwHtYkX7iKk.html" style="width: 100%;" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen=""></iframe></div></div></figure><p>&nbsp;</p><p>Github: <a target="_blank" href="https://github.com/MekanJuma/Telegram-Bot-Tutorial">https://github.com/MekanJuma/Telegram-Bot-Tutorial</a></p><p>Happy bot-building! 🤖</p></div>
+
 </article>
 </div>
 </section>
+
+<div id="comment-delete-confirm" tabindex="-1" aria-hidden="true" class="fixed top-0 left-0 right-0 z-50 hidden p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-full justify-center items-center">
+<form id="comment-delete-form" class="relative w-full max-w-md h-auto">
+<div class="relative bg-white rounded-lg shadow dark:bg-primary-700">
+<button type="button" class="absolute top-3 right-2.5 text-primary-400 bg-transparent hover:bg-primary-200 hover:text-primary-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-primary-800 dark:hover:text-white" data-modal-hide="comment-delete-confirm">
+<svg class="svg-inline--fa fa-xmark w-5 h-5" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="xmark" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" data-fa-i2svg=""><path fill="currentColor" d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"></path></svg><!-- <i class="fa-solid fa-xmark w-5 h-5"></i> Font Awesome fontawesome.com -->
+<span class="sr-only">Ýatyr</span>
+</button>
+<div class="p-6 text-center">
+<h3 class="mb-5 text-lg font-normal text-primary-500 dark:text-primary-400">
+Makalany pozmak isleýärsiňizmi?
+</h3>
+<button type="submit" class="text-white bg-red-600 hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 dark:focus:ring-primary-800 font-medium rounded-lg text-sm inline-flex items-center px-5 py-2.5 text-center mr-2">
+Poz
+</button>
+<button data-modal-hide="comment-delete-confirm" type="button" class="text-primary-500 bg-white hover:bg-primary-100 focus:ring-4 focus:outline-none focus:ring-primary-200 rounded-lg border border-primary-200 text-sm font-medium px-5 py-2.5 hover:text-primary-900 dark:bg-primary-700 dark:text-primary-300 dark:border-primary-500 dark:hover:text-white dark:hover:bg-primary-600 dark:focus:ring-primary-600">
+Ýatyr
+</button>
+</div>
+</div>
+</form>
+</div>
+<div id="report" tabindex="-1" class="fixed top-0 left-0 right-0 z-50 hidden p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-modal h-full justify-center items-center">
+<form method="post" id="report-form" class="relative w-full max-w-md h-auto">
+<div class="relative bg-white rounded-lg dark:bg-primary-900">
+<button type="button" class="absolute top-3 right-2.5 text-primary-400 bg-transparent hover:bg-primary-200 hover:text-primary-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-primary-800 dark:hover:text-white" data-modal-hide="report">
+<svg class="svg-inline--fa fa-xmark w-5 h-5" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="xmark" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" data-fa-i2svg=""><path fill="currentColor" d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"></path></svg><!-- <i class="fa-solid fa-xmark w-5 h-5"></i> Font Awesome fontawesome.com -->
+<span class="sr-only">Ýatyr</span>
+</button>
+<div class="p-6 text-center">
+<h3 class="mb-5 text-lg font-normal text-primary-500 dark:text-primary-400">
+Makalany şikaýat et
+</h3>
+<fieldset>
+<legend class="sr-only">Şikaýat görnüşleri</legend>
+<div class="flex items-center mb-4">
+<input type="radio" required="" name="report_type" value="spam" class="w-4 h-4 border-gray-300 focus:ring-2 focus:ring-blue-300 dark:focus:ring-blue-600 dark:focus:bg-blue-600 dark:bg-gray-700 dark:border-gray-600" checked="">
+<label class="block ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">
+Spam
+</label>
+</div>
+<div class="flex items-center mb-4">
+<input type="radio" required="" name="report_type" value="harassment" class="w-4 h-4 border-gray-300 focus:ring-2 focus:ring-blue-300 dark:focus:ring-blue-600 dark:focus:bg-blue-600 dark:bg-gray-700 dark:border-gray-600">
+<label class="block ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">
+Azar Bermek
+</label>
+</div>
+<div class="flex items-center mb-4">
+<input type="radio" required="" name="report_type" value="rules_violation" class="w-4 h-4 border-gray-300 focus:ring-2 focus:ring-blue-300 dark:focus:ring-blue-600 dark:bg-gray-700 dark:border-gray-600">
+<label class="block ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">
+Düzgünleriň bozulmagy
+</label>
+</div>
+<div class="flex items-center mb-4">
+<input type="radio" required="" name="report_type" value="other" class="w-4 h-4 border-gray-300 focus:ring-2 focus:ring-blue-300 dark:focus:ring-blue-600 dark:bg-gray-700 dark:border-gray-600">
+<label class="block ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">
+Başga
+</label>
+</div>
+</fieldset>
+<label for="description" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Has köp maglumat (Hökmany dal)</label>
+<textarea id="description" rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder=""></textarea>
+<div class="flex items-cent justify-end mt-4">
+<button type="submit" class="text-white bg-red-600 hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 dark:focus:ring-primary-800 font-medium rounded-lg text-sm inline-flex items-center px-5 py-2.5 text-center">
+Şikaýat et
+</button>
+</div>
+</div>
+</div>
+</form>
+</div>
+<div id="comment-edit" tabindex="-1" class="fixed top-0 left-0 right-0 z-50 hidden p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-modal h-full justify-center items-center">
+<form method="post" id="comment-edit-form" class="relative w-full max-w-md h-auto">
+<div class="relative bg-white rounded-lg dark:bg-primary-700">
+<button type="button" class="absolute top-3 right-2.5 text-primary-400 bg-transparent hover:bg-primary-200 hover:text-primary-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-primary-800 dark:hover:text-white" data-modal-hide="comment-edit">
+<svg class="svg-inline--fa fa-xmark w-5 h-5" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="xmark" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" data-fa-i2svg=""><path fill="currentColor" d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"></path></svg><!-- <i class="fa-solid fa-xmark w-5 h-5"></i> Font Awesome fontawesome.com -->
+<span class="sr-only">Ýatyr</span>
+</button>
+<div class="p-6 text-center">
+<h2 class="text-lg lg:text-2xl font-bold text-primary-900 dark:text-white mb-2">Teswiri üýtget</h2>
+<div class="py-2 px-4 mb-4 bg-white rounded-lg rounded-t-lg border border-primary-200 dark:bg-primary-700 dark:border-primary-500">
+<label class="sr-only" for="content">Siziň teswiriňiz"</label>
+<textarea class="px-0 resize-none w-full text-base placeholder:text-base dark:bg-primary-700 border-0 focus:ring-0 focus:outline-none dark:text-white dark:placeholder-primary-400" placeholder="Ibermek üçin &#39;Ctrl + Enter&#39; basyň" id="comment-edit-form-content" name="content" maxlength="750" required="" rows="6"></textarea>
+</div>
+<div class="flex justify-end items-center gap-5">
+<button data-modal-hide="comment-edit" class="text-primary-500 bg-white hover:bg-primary-100 focus:ring-4 focus:outline-none focus:ring-primary-200 rounded-lg border border-primary-200 text-sm font-medium px-5 py-2.5 hover:text-primary-900 dark:bg-primary-700 dark:text-primary-300 dark:border-primary-500 dark:hover:text-white dark:hover:bg-primary-600 dark:focus:ring-primary-600" type="submit">
+Ýatyr
+</button>
+<button id="comment-edit-form-submit-button" class="active order-last text-white bg-green-600 hover:bg-green-500 focus:outline-none focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 dark:bg-green-600 dark:hover:bg-green-500 dark:focus:ring-green-500 dark:border-green-500" type="submit">
+Üýtget
+</button>
+</div>
+</div>
+</div>
+</form>
+</div>
+<script type="text/javascript">
+        const like_button = document.querySelector("#like-button")
+        if (like_button) {
+            like_button.addEventListener("click", likeArticle)
+        }
+
+        async function likeArticle(e) {
+            
+
+            try {
+                const response = await fetch("/api/articles/583/like/", {
+                    method: "POST",
+                    body: JSON.stringify({
+                        is_liked: like_button.getAttribute("job") === "like",
+                    }),
+                    headers: {
+                        "Content-type": "application/json; charset=UTF-8",
+                        "X-CSRFToken": csrfToken,
+                    },
+                    redirect: "manual",
+                });
+                if (response.status === 200) {
+                    let data = await response.json();
+                    for (let likeCount of document.querySelectorAll(".like_count")) {
+                        likeCount.textContent = data["like_count"];
+                    }
+                    for (let star of document.querySelectorAll(".like_icon")) {
+                        if (data["is_liked"]) {
+                            star.setAttribute("data-prefix", "fas");
+                            like_button.setAttribute("job", "dislike")
+                        } else {
+                            star.setAttribute("data-prefix", "far");
+                            like_button.setAttribute("job", "like")
+                        }
+                    }
+                } else if (response.status === 404) {
+                    document.location.href = "/404";
+                } else if (response.status === 403) {
+                    let message = "Öz makalalaryňyzy halap bolanok!";
+                    alert(message);
+                } else {
+                    document.location.href = response.url;
+                }
+            } catch (err) {
+                alert(err.message);
+            }
+        }
+
+        
+    </script>
+</main>
+<footer class="bg-primary-50 dark:bg-primary-950">
+
+</footer>
+<div class="notifications"></div>
+<script type="text/javascript">
+    const messages = []
+    
+</script>
+
+
+<iframe name="googlefcPresent" style="width: 0px; height: 0px; border: none; z-index: -1000; left: -1000px; top: -1000px; display: none;" src="./m2_files/saved_resource.html"></iframe><ins class="adsbygoogle adsbygoogle-noablate" data-adsbygoogle-status="done" style="display: none !important;" data-ad-status="unfilled"><div id="aswift_0_host" tabindex="0" title="Advertisement" aria-label="Advertisement" style="border: none; height: 0px; width: 0px; margin: 0px; padding: 0px; position: relative; visibility: visible; background-color: transparent; display: inline-block;"><iframe id="aswift_0" name="aswift_0" browsingtopics="true" style="left:0;position:absolute;top:0;border:0;width:undefinedpx;height:undefinedpx;" sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allow="attribution-reporting" src="./m2_files/ads.html" data-google-container-id="a!1" data-load-complete="true"></iframe></div></ins><iframe name="googlefcInactive" src="./m2_files/saved_resource(1).html" style="display: none; width: 0px; height: 0px; border: none; z-index: -1000; left: -1000px; top: -1000px;"></iframe><iframe name="googlefcLoaded" src="./m2_files/saved_resource(2).html" style="display: none; width: 0px; height: 0px; border: none; z-index: -1000; left: -1000px; top: -1000px;"></iframe><div id="adsbox">&nbsp;</div><iframe src="./m2_files/aframe.html" width="0" height="0" style="display: none;"></iframe></body><iframe id="google_esf" name="google_esf" src="./m2_files/zrt_lookup.html" style="display: none;"></iframe><iframe name="goog_topics_frame" src="./m2_files/topics_frame.html" style="display: none;"></iframe></html>
